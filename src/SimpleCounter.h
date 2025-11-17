@@ -5,17 +5,16 @@
 #define SIMPLE_COUNTER_HEADER_FILE
 #include "Arduino.h"
 
-template <typename COUNTER_TYPE>
 class SimpleCounter{
     public:
-        COUNTER_TYPE startValue;
-        COUNTER_TYPE maxValue;
-        COUNTER_TYPE iterationStep;
-        COUNTER_TYPE totalCycles;
-        COUNTER_TYPE count;
-        unsigned int incrementAt;
+        int startValue;
+        unsigned long maxValue;
+        int iterationStep;
+        unsigned long totalCycles;
+        unsigned long value;
+        int incrementAt;
 
-        SimpleCounter(COUNTER_TYPE startVal, COUNTER_TYPE maxVal, COUNTER_TYPE step = 1, int incAt = 1);
+        SimpleCounter(int startVal = 0, unsigned long maxVal = 255, int step = 1, int incAt = 1);
 
         bool increment();
 };
