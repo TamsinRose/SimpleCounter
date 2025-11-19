@@ -21,7 +21,7 @@ bool SimpleCounter::increment(){
             value = value + iterationStep;
         }
         else{
-            if((totalCycles % (iterationStep * incrementAt)) == 0){
+            if((totalCycles % (incrementAt)) == 0){
                 value = value + iterationStep;
             }
             else{
