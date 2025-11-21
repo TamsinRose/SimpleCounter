@@ -13,8 +13,9 @@ class SimpleCounter{
         unsigned long totalCycles;
         unsigned long value;
         int incrementAt;
+        strictOverflow;
 
-        SimpleCounter(int startVal = 0, unsigned long maxVal = 255, int step = 1, int incAt = 1);
+        SimpleCounter(int startVal = 0, unsigned long maxVal = 255, int step = 1, int incAt = 1, bool strict = false);
 
         bool increment();
 };

@@ -1,15 +1,17 @@
 /******************************************************************************
 // Define the SimpleCounter class methods
 ******************************************************************************/
+
 #include "SimpleCounter.h"
 
-SimpleCounter::SimpleCounter(int startVal, unsigned long maxVal, int step, int incAt){
+SimpleCounter::SimpleCounter(int startVal, unsigned long maxVal, int step, int incAt, bool strict){
     startValue = startVal;
     maxValue = maxVal;
     iterationStep = step;
     totalCycles = 0;
     value = startVal;
-    incrementAt = incAt;  
+    incrementAt = incAt;
+    strictOverflow = strict;  
 }
 
 bool SimpleCounter::increment(){
@@ -17,18 +19,24 @@ bool SimpleCounter::increment(){
     if(value >= maxValue){
         value = startValue;
     }else{
-        if(incrementAt == iterationStep){
-            value = value + iterationStep;
+        if(strictOverflow){
+            if(value + iterationStep > maxValue){
+                value = startValue;
+            }
         }
         else{
-            if((totalCycles % (incrementAt)) == 0){
+            if(incrementAt == iterationStep){
                 value = value + iterationStep;
             }
             else{
-                return false;
+                if((totalCycles % (incrementAt)) == 0){
+                    value = value + iterationStep;
+                }
+                else{
+                    return false;
+                }
             }
-        }
-        
+        }  
     } 
     return true;
 }
