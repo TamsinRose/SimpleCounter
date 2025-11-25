@@ -13,8 +13,8 @@
 // A SimpleCounter instance counter1, default starts at 0 and counts to 255 before restarting.
 SimpleCounter counter1;
 
-// A SimpleCounter instance counter2, default starts at 1 and count to 15 before restarting. 
-SimpleCounter counter2(1, 15);
+// A SimpleCounter instance counter2, default starts at 1 and count to 5 before restarting. 
+SimpleCounter counter2(1, 5);
 
 // A SimpleCounter instance counter3, default starts at 0 and counts in steps of 5 to 100 before restarting. 
 SimpleCounter counter3(0, 100, 5);
