@@ -35,7 +35,7 @@ Strict = true will prevent the counter exceeding the **maxVal** when using a com
 
 **increment()**
 `counterExample.increment();`
-Calling the increment() function will increment the counter **value**, every **incAt** times it is called. Then **incAt** is = 1, as default, the **value** will increment the value ever time it is called.
+Calling the increment() function will increment the counter **value**, every **incAt** times it is called. Then **incAt** is = 1, as default, the **value** will increment the value every time it is called.
 
 ### Properties
 
